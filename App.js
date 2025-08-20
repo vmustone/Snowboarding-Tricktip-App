@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import StanceSelector from './src/components/StanceSelector';
+import VideoList from './src/components/VideoList';
+import VideoPlayer from './src/components/VideoPlayer';
+import { styles } from './src/styles/Styles';
 
 export default function App() {
+  const [stance, setStance] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  if (selectedVideo) {
+    return (
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.container}>
+          <VideoPlayer video={selectedVideo} onBack={() => setSelectedVideo(null)} />
+        </SafeAreaView>
+      </SafeAreaProvider>
+    );
+  }
+
+  if (!stance) {
+    return (
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.container}>
+          <StanceSelector onSelect={setStance} />
+        </SafeAreaView>
+      </SafeAreaProvider>
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <VideoList stance={stance} onBack={() => setStance(null)} onSelectVideo={setSelectedVideo} />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
