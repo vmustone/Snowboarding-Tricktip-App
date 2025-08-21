@@ -18,6 +18,11 @@ Users can choose their stance (Regular or Goofy), watch trick videos, and read i
 - [Google Drive API](https://developers.google.com/drive)  
 - [Google Docs API](https://developers.google.com/docs)  
 
+## Project Status
+
+The development of this app is ongoing.  
+In the future, more coaching and trick tip videos will be added to expand the content and improve the overall learning experience.
+
 ## Installation
 
 1. Clone the repo:
