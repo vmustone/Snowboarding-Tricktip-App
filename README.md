@@ -1,3 +1,6 @@
+
+https://github.com/user-attachments/assets/c63de479-7422-4a6d-aa15-53fd8a737bb4
+
 # TrickTip App
 
 A React Native application that displays snowboard trick tutorial videos along with detailed descriptions.  
@@ -23,11 +26,3 @@ Users can choose their stance (Regular or Goofy), watch trick videos, and read i
 The development of this app is ongoing.  
 In the future, more coaching and trick tip videos will be added to expand the content and improve the overall learning experience.
 
-## Installation
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/<username>/tricktip-app.git
-   cd tricktip-app
-   npm install
-   npm start
